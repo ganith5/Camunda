@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- NOTE: a completed version of this file should be on the file system
+         in the location specified in src/main/resources/application.properties -->
+
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{yyyy-MM-dd_HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+    
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
+    <logger name="com.example" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </logger>
+   
+
+</configuration>

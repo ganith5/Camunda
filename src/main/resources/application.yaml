@@ -1,0 +1,29 @@
+spring.application.name: simpleApplication
+spring:
+  datasource:
+    url: jdbc:h2:mem:example-simple;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+  activemq:
+    in-memory: true
+    pool:
+     enabled: false
+camunda.bpm:
+  admin-user:
+    id: kermit
+    password: superSecret
+    firstName: Kermit
+  filter:
+    create: All tasks
+  application:
+      delete-upon-undeploy: false
+      scan-for-process-definitions: false
+      deploy-changed-only: true
+      resume-previous-versions: true
+      resume-previous-by: a value
+  job-execution:
+      enabled: true
+  metrics:
+      enabled: true
+      db-reporter-activate: false
+logging:
+  config: logback-spring.xml
+    
