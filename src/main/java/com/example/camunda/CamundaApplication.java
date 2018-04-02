@@ -4,6 +4,7 @@ import javax.jms.ConnectionFactory;
 
 import org.camunda.bpm.spring.boot.starter.annotation.EnableProcessApplication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
@@ -20,7 +21,7 @@ import com.example.camunda.loan.LoanApplicationService;
 @SpringBootApplication
 @EnableProcessApplication
 @EnableJms
-public class CamundaApplication{
+public class CamundaApplication implements CommandLineRunner{
 	
 	@Autowired
 	LoanApplicationService loanApplicationService;
@@ -51,6 +52,15 @@ public class CamundaApplication{
 		SpringApplication.run(CamundaApplication.class, args);
 		
 		
+		
+	}
+
+
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("Calling CommandLineRunner from CamundaApplication");
 		
 	}
 	
